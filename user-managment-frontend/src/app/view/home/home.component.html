@@ -12,6 +12,9 @@
 
       <div class="example-sidenav-content ">
         <h1>User Management System</h1>
+        <div id="newBtnContainer" class="d-flex flex-row-reverse" >
+          <button class="btn btn-primary" (click)="drawer.toggle()" routerLink="/add">New User</button>
+        </div>
         <table class="table table-secondary table-striped table-hover">
           <thead>
           <tr>
@@ -20,8 +23,8 @@
             <th scope="col">WEBSITE</th>
           </tr>
           </thead>
-          <tbody *ngFor="let user of userList">
-          <tr (click)="drawer.toggle(); onClickUser(user)" routerLink="/detail" >
+          <tbody *ngFor="let user of userList" (mousedown)="onClickUser(user)"  >
+          <tr (click)=" drawer.toggle()" routerLink="/detail" >
             <th scope="row">{{user.id}}</th>
             <td>{{user.username}}</td>
             <td>{{user.website}}</td>

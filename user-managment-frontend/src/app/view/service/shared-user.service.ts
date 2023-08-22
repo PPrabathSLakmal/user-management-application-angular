@@ -3,7 +3,7 @@ import {User} from "../../dto/user";
 
 @Injectable({providedIn: 'root'})
 export class SharedUserService {
-  private selectedUser: any;
+  private selectedUser: any = null;
   constructor() { }
   setSelectedUser(user: User) {
     this.selectedUser = user;

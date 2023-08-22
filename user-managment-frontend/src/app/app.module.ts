@@ -12,6 +12,7 @@ import {HomeComponent} from "./view/home/home.component";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {User} from "./dto/user";
 import {SharedUserService} from "./view/service/shared-user.service";
+import { AddUserComponent } from './view/add-user/add-user.component';
 
 export const routs:Routes =[
   {
@@ -28,7 +29,8 @@ export const routs:Routes =[
     UserDetailsComponent,
     EditUserComponent,
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    AddUserComponent
 
   ],
   imports: [

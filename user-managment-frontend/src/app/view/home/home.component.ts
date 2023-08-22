@@ -15,13 +15,13 @@ export class HomeComponent {
   private apiUrl: string='https://jsonplaceholder.typicode.com/';
   constructor(private http:HttpClient, private sharedUserService:SharedUserService) {
     this.getUsers().subscribe(userList=>this.userList = userList);
-    console.log(this.userList.toString());
   }
   getUsers(): Observable<User[]>
   {
     return this.http.get<User[]>(`${this.apiUrl}users`);
   }
-  onClickUser(user: User) {
+  onClickUser(user: any) {
     this.sharedUserService.setSelectedUser(user);
+    user = null;
   }
 }

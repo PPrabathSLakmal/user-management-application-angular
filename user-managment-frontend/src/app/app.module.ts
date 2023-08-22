@@ -10,14 +10,16 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {HomeComponent} from "./view/home/home.component";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {User} from "./dto/user";
+import {SharedUserService} from "./view/service/shared-user.service";
 
 export const routs:Routes =[
   {
-    path:"user-details",
+    path:"detail",
     component:UserDetailsComponent
   },
   {
-    path:"edit-user",
+    path:"edit",
     component:EditUserComponent
   }
 ];
@@ -38,7 +40,7 @@ export const routs:Routes =[
     MatSidenavModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [SharedUserService],
   bootstrap: [AppComponent]
 
 })

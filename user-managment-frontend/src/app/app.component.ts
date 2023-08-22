@@ -1,11 +1,5 @@
 import { Component } from '@angular/core';
-import {MatSidenavModule} from "@angular/material/sidenav";
-import {NgForOf, NgIf} from "@angular/common";
-import {MatButtonModule} from "@angular/material/button";
-import {HttpClient} from "@angular/common/http";
-import {User} from "./dto/user";
-import {Observable} from "rxjs";
-
+import {SharedUserService} from "./view/service/shared-user.service";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,5 +7,7 @@ import {Observable} from "rxjs";
 })
 export class AppComponent {
   title = 'user-managment-frontend';
+  constructor(private sharedUserService: SharedUserService) {
+  }
 
 }

@@ -21,7 +21,7 @@
           </tr>
           </thead>
           <tbody *ngFor="let user of userList">
-          <tr (click)="drawer.toggle()" >
+          <tr (click)="drawer.toggle(); onClickUser(user)" routerLink="/detail" >
             <th scope="row">{{user.id}}</th>
             <td>{{user.username}}</td>
             <td>{{user.website}}</td>

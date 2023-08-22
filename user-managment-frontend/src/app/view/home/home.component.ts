@@ -33,4 +33,10 @@ export class HomeComponent {
       this.userList.splice(this.userList.indexOf(user),1);
     });
   }
+  searchUser(q: string) {
+    const index: number = this.userList.findIndex(user => user.username === q);
+    const searchedUser: User = this.userList[index];
+    this.userList=[];
+    this.userList.push(searchedUser);
+  }
 }

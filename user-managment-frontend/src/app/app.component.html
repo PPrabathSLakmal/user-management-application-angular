@@ -19,16 +19,11 @@
             <th scope="col">WEBSITE</th>
           </tr>
           </thead>
-          <tbody>
-          <tr (click)="drawer.toggle()">
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-          </tr>
-          <tr (click)="drawer.toggle()">
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
+          <tbody *ngFor="let user of userList">
+          <tr (click)="drawer.toggle()" >
+            <th scope="row">{{user.id}}</th>
+            <td>{{user.username}}</td>
+            <td>{{user.website}}</td>
           </tr>
 
           </tbody>

@@ -27,3 +27,30 @@
 table > tbody:hover{
   cursor: pointer;
 }
+#icnEdit{
+  color: green;
+}
+#icnDetails{
+  color: darkblue;
+}
+#icnDelete{
+  color: black;
+}
+tbody > tr >td:nth-child(4) > span:hover{
+  scale: 1.2;
+}
+header{
+  width: 100%;
+}
+#search{
+  border-radius: 20px;
+  background-color: seashell;
+}
+#searchContainer{
+  width: 90%;
+}
+#searchContainer>button{
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+}
+

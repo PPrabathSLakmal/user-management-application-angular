@@ -1,1 +1,23 @@
-<h1>User {{user.username}} Details</h1>
+<h1 class="fw-bold bg-dark text-white text-center">{{userSelected.username}} Details</h1>
+<div class="d-flex flex-column gap-2 justify-content-center align-items-center">
+  <label  for="name" class="form-label">Name</label>
+  <div class="input-group ">
+    <input #name ngModel #nameModel="ngModel" [class.is-invalid]="nameModel.dirty && nameModel.invalid" type="text" class="disabled form-control text-center" id="name" aria-describedby="inputGroupPrepend2" [(ngModel)]="txtName" >
+  </div>
+  <label  for="username" class="form-label">Username</label>
+  <div class="input-group ">
+    <input type="text" class="disabled form-control text-center" id="username" aria-describedby="inputGroupPrepend2" [(ngModel)]="txtUsername" >
+  </div>
+  <label for="contact" class="form-label ">Contact</label>
+  <div class="input-group">
+    <input  type="text" class=" form-control text-center" id="contact"
+           aria-describedby="inputGroupPrepend2" [(ngModel)]="txtContact" >
+  </div>
+  <label for="website" class="form-label " >Website</label>
+  <div class="input-group">
+    <input  type="text" class=" form-control text-center" id="website"
+           aria-describedby="inputGroupPrepend2" [(ngModel)]="txtWebsite" >
+  </div>
+
+
+</div>

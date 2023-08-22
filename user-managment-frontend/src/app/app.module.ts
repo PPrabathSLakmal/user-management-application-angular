@@ -10,7 +10,6 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {HomeComponent} from "./view/home/home.component";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {User} from "./dto/user";
 import {SharedUserService} from "./view/service/shared-user.service";
 import { AddUserComponent } from './view/add-user/add-user.component';
 import {FormsModule} from "@angular/forms";
@@ -53,6 +52,8 @@ export const routs:Routes =[
 
 })
 export class AppModule {
+
   constructor() {
+
   }
 }

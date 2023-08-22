@@ -1,33 +1,43 @@
-<div id="outer" class="d-flex justify-content-center align-items-center">
+<header class="position-fixed p-2" >
+  <h1 class="text-center fw-bold d-flex flex-column fs-1">User Management System</h1>
+</header>
+<div id="outer" class="d-flex justify-content-center align-items-center ">
+
   <main >
     <mat-drawer-container class="example-container" autosize>
       <mat-drawer #drawer class="example-sidenav" mode="side" position="end">
-        <p>Auto-resizing sidenav</p>
-        <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
-        <button (click)="showFiller = !showFiller" mat-raised-button>
-          Toggle extra text
-        </button>
         <router-outlet></router-outlet>
       </mat-drawer>
 
-      <div class="example-sidenav-content ">
-        <h1>User Management System</h1>
-        <div id="newBtnContainer" class="d-flex flex-row-reverse" >
-          <button class="btn btn-primary" (click)="drawer.toggle()" routerLink="/add">New User</button>
+
+      <div  id="newBtnContainer" class="d-flex flex-row">
+        <div id="searchContainer" class="d-flex">
+          <button type="submit" (click)="seachUser(txtSearch.value)" ><span class="material-symbols-outlined">data_loss_prevention</span></button>
+          <input #txtSearch type="text" class="form-control text-center " id="search" aria-describedby="inputGroupPrepend2" placeholder="Enter user to search" >
         </div>
-        <table class="table table-secondary table-striped table-hover">
+        <button class="btn btn-primary" (click)="drawer.toggle()" routerLink="/add">New User</button>
+      </div>
+      <div class="example-sidenav-content ">
+        <table class="table table-secondary table-striped table-hover overflow-scroll">
           <thead>
           <tr>
-            <th scope="col">ID</th>
+            <th scope="col" class="text-center">ID</th>
             <th scope="col">USERNAME</th>
             <th scope="col">WEBSITE</th>
+            <th scope="col"></th>
           </tr>
           </thead>
-          <tbody *ngFor="let user of userList" (mousedown)="onClickUser(user)"  >
-          <tr  (click)="drawer.toggle()" routerLink="/detail" >
-            <th scope="row">{{user.id}}</th>
+          <tbody *ngFor="let user of userList"  >
+          <tr>
+            <th scope="row" class="text-center">{{user.id}}</th>
             <td>{{user.username}}</td>
             <td>{{user.website}}</td>
+            <td>
+              <span id="icnEdit" class="material-symbols-outlined" (click)="drawer.toggle(); onClickUser(user.id)" routerLink="/edit">border_color</span>
+              <span id="icnDetails" class="material-symbols-outlined" (click)="drawer.toggle();onClickUser(user.id)" routerLink="/detail" >feed</span>
+              <span id="icnDelete" class="material-symbols-outlined" (click)="deleteUser(user)">delete</span>
+
+            </td>
           </tr>
 
           </tbody>

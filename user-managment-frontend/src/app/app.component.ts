@@ -9,21 +9,9 @@ import {Observable} from "rxjs";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  standalone: true,
-  imports: [MatSidenavModule, NgIf, MatButtonModule, NgForOf]
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'user-managment-frontend';
-  showFiller = false;
-  userList: Array<User> = [];
-  private apiUrl: string='https://jsonplaceholder.typicode.com/';
-  constructor(private http:HttpClient) {
-    this.getUsers().subscribe(userList=>this.userList = userList);
-    console.log(this.userList.toString());
-  }
-  getUsers(): Observable<User[]>
-  {
-    return this.http.get<User[]>(`${this.apiUrl}users`);
-  }
+
 }

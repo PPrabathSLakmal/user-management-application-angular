@@ -13,6 +13,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {User} from "./dto/user";
 import {SharedUserService} from "./view/service/shared-user.service";
 import { AddUserComponent } from './view/add-user/add-user.component';
+import {FormsModule} from "@angular/forms";
 
 export const routs:Routes =[
   {
@@ -22,6 +23,10 @@ export const routs:Routes =[
   {
     path:"edit",
     component:EditUserComponent
+  },
+  {
+    path:"add",
+    component:AddUserComponent
   }
 ];
 @NgModule({
@@ -40,7 +45,8 @@ export const routs:Routes =[
     RouterModule.forRoot(routs),
     MatButtonModule,
     MatSidenavModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [SharedUserService],
   bootstrap: [AppComponent]

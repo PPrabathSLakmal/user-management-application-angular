@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AddUserComponent {
 
+  addUser(username: HTMLInputElement, password: HTMLInputElement, contact: HTMLInputElement, website: HTMLInputElement) {
+
+  }
 }

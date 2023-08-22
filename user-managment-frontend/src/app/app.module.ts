@@ -15,9 +15,14 @@ import { MatListModule } from '@angular/material/list';
 import {HttpClientModule} from "@angular/common/http";
 import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
+import { UserDetailsComponent } from './view/user-details/user-details.component';
+import { EditUserComponent } from './view/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
+  
+    UserDetailsComponent,
+       EditUserComponent
   ],
   imports: [
     BrowserModule,

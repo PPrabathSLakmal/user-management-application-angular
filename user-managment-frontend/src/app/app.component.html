@@ -1,5 +1,5 @@
-<div id="outer">
-  <main>
+<div id="outer" class="d-flex justify-content-center align-items-center">
+  <main >
     <mat-drawer-container class="example-container" autosize>
       <mat-drawer #drawer class="example-sidenav" mode="side" position="end">
         <p>Auto-resizing sidenav</p>
@@ -9,10 +9,30 @@
         </button>
       </mat-drawer>
 
-      <div class="example-sidenav-content">
-        <button type="button" mat-button (click)="drawer.toggle()">
-          Toggle sidenav
-        </button>
+      <div class="example-sidenav-content ">
+        <h1>User Management System</h1>
+        <table class="table table-secondary table-striped table-hover">
+          <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">USERNAME</th>
+            <th scope="col">WEBSITE</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr (click)="drawer.toggle()">
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+          </tr>
+          <tr (click)="drawer.toggle()">
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+          </tr>
+
+          </tbody>
+        </table>
       </div>
 
     </mat-drawer-container>

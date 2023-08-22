@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {NgIf} from "@angular/common";
 import {MatButtonModule} from "@angular/material/button";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-root',
@@ -13,4 +14,5 @@ import {MatButtonModule} from "@angular/material/button";
 export class AppComponent {
   title = 'user-managment-frontend';
   showFiller = false;
+
 }

@@ -11,7 +11,7 @@ import {SharedUserService} from "../service/shared-user.service";
 })
 export class HomeComponent {
   showFiller = false;
-  userList: Array<User> = [];
+  public userList: Array<User> = [];
   private apiUrl: string='https://jsonplaceholder.typicode.com/';
   constructor(private http:HttpClient, private sharedUserService:SharedUserService) {
     this.getUsers().subscribe(userList=>this.userList = userList);

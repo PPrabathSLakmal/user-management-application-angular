@@ -1,26 +1,29 @@
-<h1 class="fw-bold bg-dark text-white text-center">Update User</h1>
-<div class="d-flex flex-column gap-2 justify-content-center align-items-center">
-  <label  for="name" class="form-label">Name</label>
-  <div class="input-group ">
-    <input #name ngModel #nameModel="ngModel" [class.is-invalid]="nameModel.dirty && nameModel.invalid" type="text" class="form-control text-center" id="name" aria-describedby="inputGroupPrepend2" placeholder="Eg: Kasun Sampath" [(ngModel)]="txtName" required>
-  </div>
-  <label  for="username" class="form-label">Username</label>
-  <div class="input-group ">
-    <input #username ngModel #UserNameModel="ngModel" [class.is-invalid]="UserNameModel.dirty && UserNameModel.invalid" type="text" class="form-control text-center" id="username" aria-describedby="inputGroupPrepend2" placeholder="Eg: Kasun99" [(ngModel)]="txtUsername" required>
-  </div>
-  <label for="contact" class="form-label ">Contact</label>
-  <div class="input-group">
-    <input #contact pattern="^\d{3}-\d{7}$" ngModel #contactModel="ngModel" [class.is-invalid]="contactModel.dirty && contactModel.invalid" type="text" class="form-control text-center" id="contact"
-           aria-describedby="inputGroupPrepend2" placeholder="Eg: 011-1234567" [(ngModel)]="txtContact" required>
-  </div>
-  <label for="website" class="form-label " >Website</label>
-  <div class="input-group">
-    <input #website pattern="^[\w]+[.][A-z]+" ngModel #websiteModel="ngModel" [class.is-invalid]="websiteModel.dirty && websiteModel.invalid" type="text" class="form-control text-center" id="website"
-           aria-describedby="inputGroupPrepend2" placeholder="abc.xyz" [(ngModel)]="txtWebsite" required>
-  </div>
+<main>
+  <h1 class="fw-bold bg-dark text-white text-center">Update User</h1>
+  <div class="d-flex flex-column gap-2 justify-content-center align-items-center">
+    <label  for="name" class="form-label">Name</label>
+    <div class="input-group ">
+      <input #name ngModel #nameModel="ngModel" [class.is-invalid]="nameModel.dirty && nameModel.invalid" type="text" class="form-control text-center" id="name" aria-describedby="inputGroupPrepend2" placeholder="Eg: Kasun Sampath" [(ngModel)]="txtName" required>
+    </div>
+    <label  for="username" class="form-label">Username</label>
+    <div class="input-group ">
+      <input #username ngModel #UserNameModel="ngModel" [class.is-invalid]="UserNameModel.dirty && UserNameModel.invalid" type="text" class="form-control text-center" id="username" aria-describedby="inputGroupPrepend2" placeholder="Eg: Kasun99" [(ngModel)]="txtUsername" required>
+    </div>
+    <label for="contact" class="form-label ">Contact</label>
+    <div class="input-group">
+      <input #contact pattern="^\d{3}-\d{7}$" ngModel #contactModel="ngModel" [class.is-invalid]="contactModel.dirty && contactModel.invalid" type="text" class="form-control text-center" id="contact"
+             aria-describedby="inputGroupPrepend2" placeholder="Eg: 011-1234567" [(ngModel)]="txtContact" required>
+    </div>
+    <label for="website" class="form-label " >Website</label>
+    <div class="input-group">
+      <input #website pattern="^[\w]+[.][A-z]+" ngModel #websiteModel="ngModel" [class.is-invalid]="websiteModel.dirty && websiteModel.invalid" type="text" class="form-control text-center" id="website"
+             aria-describedby="inputGroupPrepend2" placeholder="abc.xyz" [(ngModel)]="txtWebsite" required>
+    </div>
 
-  <div id="btnContainer" class="d-flex gap-2 p-4">
-    <button class="btn btn-primary" type="submit"  (click)="updateUser(name, username, contact, website)"> Add </button>
-    <button class="btn btn-warning" type="reset" (click)="nameModel.reset();UserNameModel.reset();contactModel.reset(); websiteModel.reset();name.focus()">Clear</button>
+    <div id="btnContainer" class="d-flex gap-2 p-4">
+      <button class="btn btn-primary" type="submit"  (click)="updateUser(name, username, contact, website)"> Add </button>
+      <button class="btn btn-warning" type="reset" (click)="nameModel.reset();UserNameModel.reset();contactModel.reset(); websiteModel.reset();name.focus()">Clear</button>
+    </div>
   </div>
-</div>
+</main>
+

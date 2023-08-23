@@ -15,14 +15,37 @@
 .example-sidenav {
   padding: 20px;
 }
+.no-content{
+  column-span: all;
+  row-span: abs(10);
+}
+
 
 #outer {
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top,#c9c9ff 50%,#6e6ef6 90%) no-repeat;
+  background: linear-gradient(to top, #6262f4 50%, #171766 90%) no-repeat;
 }
 #newBtnContainer{
   width: 100%;
+  position: absolute;
+}
+header{
+  h1{
+    text-shadow: 4px 4px 6px rgb(9, 9, 49);
+    color: white;
+  }
+}
+#mat-drawer {
+  background-color: #4d385e;
+  border-radius: 10px;
+}
+#drawer-container{
+  border-radius: 10px;
+}
+#btnNewUser{
+  min-width: 100px;
+  height: fit-content ;
 }
 table > tbody:hover{
   cursor: pointer;
@@ -39,13 +62,15 @@ table > tbody:hover{
 tbody > tr >td:nth-child(4) > span:hover{
   scale: 1.2;
 }
+
 header{
   width: 100%;
 }
 #search{
-  border-bottom-right-radius: 20px;
-  border-top-right-radius: 20px;
-  background-color: seashell;
+  border-bottom-right-radius: 30px;
+  border-top-right-radius: 30px;
+  background-color: whitesmoke;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.7);
 }
 #searchContainer{
   width: 90%;
@@ -53,5 +78,8 @@ header{
 #searchContainer>button{
   border-bottom-left-radius: 20px;
   border-top-left-radius: 20px;
+  background-color: whitesmoke;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.7);
+
 }
 

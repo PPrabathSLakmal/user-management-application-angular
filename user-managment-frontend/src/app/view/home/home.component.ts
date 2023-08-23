@@ -1,7 +1,9 @@
 import {Component} from '@angular/core';
 import {User} from "../../dto/user";
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {Observable, of} from "rxjs";
+import {DomSanitizer, SafeHtml} from "@angular/platform-browser";
+import {DummyDataService} from "../service/dummy-data.service";
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -10,11 +12,17 @@ import {Observable} from "rxjs";
 })
 export class HomeComponent {
   showFiller = false;
+  htmlContent: SafeHtml='';
   public userClicked:any;
   public userList: Array<User> = [];
   private apiUrl: string='https://jsonplaceholder.typicode.com/';
-  constructor(private http:HttpClient) {
-    this.getUsers().subscribe(userList=>this.userList = userList);
+  constructor(private http:HttpClient, private sanitizer:DomSanitizer, private dummyDataService:DummyDataService) {
+    // this.getUsers().subscribe(userList=>this.userList = userList);
+    if (this.userList.length === 0){
+      // this.htmlContent = this.sanitizer.bypassSecurityTrustHtml("<tr class='col'><td class='fs-3 text-center' colspan='4' rowspan='10'>No any user record to display</td></tr>");
+      this.getDummyData().subscribe(userList=>this.userList = userList);
+      console.log(this.userList.toString());
+    }
   }
   getUsers(): Observable<User[]>
   {
@@ -39,4 +47,8 @@ export class HomeComponent {
     this.userList=[];
     this.userList.push(searchedUser);
   }
+
+  getDummyData():Observable<User[]>{
+    return this.dummyDataService.getDummyData();
+}
 }

@@ -4,21 +4,20 @@
 <div id="outer" class="d-flex justify-content-center align-items-center ">
 
   <main >
-    <mat-drawer-container class="example-container" autosize>
-      <mat-drawer #drawer class="example-sidenav" mode="side" position="end">
+
+    <mat-drawer-container id="drawer-container" class="example-container bg-dark" autosize>
+      <mat-drawer id="mat-drawer" #drawer class="example-sidenav" mode="side" position="end">
         <router-outlet></router-outlet>
       </mat-drawer>
-
-
-      <div  id="newBtnContainer" class="d-flex flex-row">
-        <div id="searchContainer" class="d-flex">
+      <div  id="newBtnContainer" class="d-flex flex-row align-items-center">
+        <div id="searchContainer" class="d-flex p-2">
           <button type="submit" (click)="searchUser(txtSearch.value)" ><span class="material-symbols-outlined">data_loss_prevention</span></button>
           <input #txtSearch type="text" class="form-control text-center " id="search" aria-describedby="inputGroupPrepend2" placeholder="Enter user to search" >
         </div>
-        <button class="btn btn-primary" (click)="drawer.toggle()" routerLink="/add">New User</button>
+        <button id="btnNewUser" class="btn btn-primary" (click)="drawer.toggle()" routerLink="/add">New User</button>
       </div>
       <div class="example-sidenav-content ">
-        <table class="table table-secondary table-striped table-hover overflow-scroll">
+        <table class="table table-danger table-striped table-hover overflow-scroll">
           <thead>
           <tr>
             <th scope="col" class="text-center">ID</th>
@@ -27,8 +26,8 @@
             <th scope="col"></th>
           </tr>
           </thead>
-          <tbody *ngFor="let user of userList"  >
-          <tr>
+          <tbody >
+          <tr *ngFor="let user of userList">
             <th scope="row" class="text-center">{{user.id}}</th>
             <td>{{user.username}}</td>
             <td>{{user.website}}</td>

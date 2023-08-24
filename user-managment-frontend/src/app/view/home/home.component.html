@@ -11,7 +11,7 @@
       </mat-drawer>
       <div  id="newBtnContainer" class="d-flex flex-row align-items-center">
         <div id="searchContainer" class="d-flex p-2">
-          <button type="submit" (click)="searchUser(txtSearch.value)" ><span class="material-symbols-outlined">data_loss_prevention</span></button>
+          <button type="submit" (click)="searchUser(txtSearch)" ><span class="material-symbols-outlined">data_loss_prevention</span></button>
           <input #txtSearch type="text" class="form-control text-center " id="search" aria-describedby="inputGroupPrepend2" placeholder="Enter user to search" >
         </div>
         <button id="btnNewUser" class="btn btn-primary" (click)="drawer.toggle()" routerLink="/add">New User</button>

@@ -4,6 +4,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable, of} from "rxjs";
 import {DomSanitizer, SafeHtml} from "@angular/platform-browser";
 import {DummyDataService} from "../service/dummy-data.service";
+import {throwDialogContentAlreadyAttachedError} from "@angular/cdk/dialog";
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -41,11 +42,25 @@ export class HomeComponent {
       this.userList.splice(this.userList.indexOf(user),1);
     });
   }
-  searchUser(q: string) {
-    const index: number = this.userList.findIndex(user => user.username === q);
-    const searchedUser: User = this.userList[index];
-    this.userList=[];
-    this.userList.push(searchedUser);
+
+  searchUser(txtSearch: HTMLInputElement) {
+    const q:string = txtSearch.value;
+    txtSearch.value = '';
+    if (q.trim().length === 0){
+      // this.getUsers().subscribe(userList=>this.userList = userList);
+        // this.htmlContent = this.sanitizer.bypassSecurityTrustHtml("<tr class='col'><td class='fs-3 text-center' colspan='4' rowspan='10'>No any user record to display</td></tr>");
+        this.getDummyData().subscribe(userList=>this.userList = userList);
+
+    }else {
+      const index: number = this.userList.findIndex(user => user.username === q || user.contact === q);
+      if (index === -1){
+        alert("User name or contact number does not exist");
+        return;
+      }
+      const searchedUser: User = this.userList[index];
+      this.userList=[];
+      this.userList.push(searchedUser);
+    }
   }
 
   getDummyData():Observable<User[]>{
